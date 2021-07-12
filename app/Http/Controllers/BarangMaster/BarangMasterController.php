@@ -36,14 +36,15 @@ class BarangMasterController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
     public function store(Request $request)
     {
         $master = new BarangMaster();
-         $master->kode_barang = $request->item_code;
-         $master->nama_barang = $request->name;
-         $master->stok = $request->quantity;
-         $master->harga = $request->price;
-         $master->harga_satuan = $request->price_per_item;
+         $master->kode_barang = $request->kode_barang;
+         $master->nama_barang = $request->nama_barang;
+         $master->stok = $request->stok;
+         $master->harga = $request->harga;
+         $master->harga_satuan = $request->harga_satuan;
          $master->save();
  
          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $master], 200);
@@ -90,21 +91,7 @@ class BarangMasterController extends Controller
      */
     public function edit($id)
     {
-        $master = BarangMaster::findOrFail($id);
-
-
-
-        $data = [
-
-            'kode_barang' => $master['kode_barang'],
-            'nama_barang' => $master['nama_barang'],
-            'stok' => $master['stok'],
-            'created_at' => $master['created_at'],
-            'updated_at' => $master['updated_at'],
-            'stok' => $master['stok'],
-            'harga' => $master['harga'],
-            'harga_satuan' => $master['harga_satuan'],
-        ];
+        $data = BarangMaster::findOrFail($id);
 
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);
     }
@@ -116,43 +103,18 @@ class BarangMasterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($id, Request $request, BarangMaster $master)
+    public function update(Request $request, $id)
     {
 
-        //  $request->validate([
-        //     'kode_barang' => 'required',
-        //     'nama_barang' => 'required',
-        //     'stok' => 'required',
-        //     'harga' => 'required',
-        //     'harga_satuan' => 'required',
-        // ]);
-        $master = BarangMaster::where('id_barang', $request->get('id'))
-        ->update([
-            'kode_barang' => $request->get('item_code_edit'),
-            'nama_barang' => $request->get('name_edit'),
-            'stok' => $request->get('quantity_edit'),
-            'harga' => $request->get('price_edit'),
-            'harga_satuan' => $request->get('price_per_item_edit'),
+        $master = BarangMaster::findOrFail($id);
+        $master->kode_barang = $request->kode_barang;
+        $master->nama_barang = $request->nama_barang;
+        $master->stok = $request->stok;
+        $master->harga = $request->harga;
+        $master->harga_satuan = $request->harga_satuan;
 
-        ]);
-        // $post = $request->all();
-
-        // // echo ;
-        // // exit;
-
-        // // echo $id;
-        // $master->findOrFail($id); // WHERE / cari data berdasarkan ID 
-        // // print_r($request->all());
-
-        // $master->kode_barang = $post['item_code_edit'];
-        // $master->nama_barang = $post['name_edit'];
-        // $master->stok = $post['quantity_edit'];
-        // $master->harga = $post['price_edit'];
-        // $master->harga_satuan = $post['price_per_item_edit'];
-
-        // // SET setiap field berdasarkan inputan data
-
-        // $master->save(); // Execute Query
+        $master->save();
+       
         return response()->json(['status' => 200, 'message' => 'Success'], 200);
 
         // cari aja di dokumentasi Laravel, namanya DB Eloquent (CRUD, JOIN, ETC)

@@ -9,7 +9,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form name="commodity_create" >
+        <form name="commodity_create">
           @csrf
           <div class="row">
             <div class="col-lg-6">
@@ -18,9 +18,6 @@
                 <input type="text" name="item_code" class="form-control" id="item_code_create">
               </div>
             </div>
-
-
-
           
             <div class="col-lg-6">
               <div class="form-group">

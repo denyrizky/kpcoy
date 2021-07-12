@@ -1,4 +1,5 @@
 <script>
+    
     $(document).ready(function() {
         $(".show_modal").click(function() {
             let id = $(this).data("id")
@@ -37,7 +38,16 @@
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
-
+            if (document.forms["commodity_create"]["name_create"].value == "") {
+        Swal.fire({
+                title: "Gagal",
+                text: "Inputan Harus Di isi.",
+                icon: "warning",
+                timerProgressBar: true,
+                showConfirmButton: true
+            });
+        return false;
+    }
             $.ajax({
                 type: "POST",
                 url: "BarangMaster/json",
@@ -119,8 +129,8 @@
             let description = $("#description_edit").val();
 
             $.ajax({
-                url: "BarangMaster/ubah/" + id,
-                type: "PUT",
+                url: "BarangMaster/" + id,
+                method:"PUT",
                 data: {
                     _token: token,
 
@@ -216,4 +226,7 @@
         });
 
     })
+
+
+    
 </script>

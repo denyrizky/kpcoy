@@ -65,7 +65,6 @@
             @foreach($master as $commodity)
             <tr>
               <th scope="row">{{ $loop->iteration }}</th>
-              <td>{{ $commodity->id_barang }}</td>
               <td>{{ $commodity->kode_barang }}</td>
               <td>{{ Str::limit($commodity->nama_barang, 55, '...') }}</td>
               <td>{{ $commodity->stok }}</td>
