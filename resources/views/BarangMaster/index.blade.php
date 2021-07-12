@@ -67,7 +67,7 @@
               <th scope="row">{{ $loop->iteration }}</th>
               <td>{{ $commodity->kode_barang }}</td>
               <td>{{ Str::limit($commodity->nama_barang, 55, '...') }}</td>
-              <td>{{ $commodity->stok }}</td>
+              <td>{{ $commodity->created_at }}</td>
               <!-- @if($commodity->condition === 1)
               <td>
                 <span class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="top" title="Baik">Baik</span>

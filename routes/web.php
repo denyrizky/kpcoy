@@ -50,13 +50,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/school-operational/json', 'SchoolOperationalAssistances\Ajax\SchoolOperationalAssistanceAjaxController');
     Route::resource('/commodity-locations/json', 'CommodityLocations\Ajax\CommodityLocationAjaxController');
 
-    Route::get('/BarangMaster/show/{id}', 'BarangMaster\BarangMasterController@show');
+
     Route::resource('/BarangMaster', 'BarangMaster\BarangMasterController');
     //Route::post('/BarangMaster/json','BarangMaster\BarangMasterController@store')->name('product.store');  
-    Route::post('/BarangMaster/json', 'BarangMaster\BarangMasterController@store');
-    Route::resource('/BarangMaster', 'BarangMaster\BarangMasterController');
-    Route::PUT('/BarangMaster/ubah/{id}', 'BarangMaster\BarangMasterController@update');
-    Route::GET('/BarangMaster/update/{id}/edit', 'BarangMaster\BarangMasterController@edit');
-    Route::DELETE('/BarangMaster/delete/{id}', 'BarangMaster\BarangMasterController@destroy');
+
     
 });

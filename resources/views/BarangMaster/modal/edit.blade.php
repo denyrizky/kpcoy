@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Modal Update Barang</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,17 +12,10 @@
                 <form name="commodity_edit">
                 @csrf
                     <div class="row">
-                    <div class="col-lg-6">
-                            <div class="form-group">
-                            <label for="id_barang_edit">id</label>
-                                <input type="text" class="form-control" id="id_barang_edit" >
-                            </div>
-                        </div>
-
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="item_code_edit">Kode Barang</label>
-                                <input type="text" name="item_code_edit" class="form-control" id="item_code_edit">
+                                <input type="text" name="item_code_edit" class="form-control" id="item_code_edit"disabled>
                             </div>
                         </div>
       

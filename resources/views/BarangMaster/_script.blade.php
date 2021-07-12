@@ -8,8 +8,8 @@
             // alert(id);
 
             $.ajax({
-                type: "GET",
-                url: "BarangMaster/show/" + id,
+                method:"GET",
+                url: "BarangMaster/" + id,
                 // data: {
                
                 //     id: id,
@@ -19,18 +19,12 @@
                     console.log(data);
                     $("#modalLabel").html(data.data.kode_barang)
                     $("#item_code").val(data.data.kode_barang)
-                    $("#id_barang_edit").val(data.data.id_barang)
-                   // $("#commodity_location_id").html(data.data.commodity_location_id)
                     $("#name").html(data.data.nama_barang)
-                    // $("#brand").val(data.data.brand)
-                    // $("#material").val(data.data.material)
                     $("#date_of_purchase").val(data.data.created_at)
-                    // $("#school_operational_assistance_id").html(data.data.school_operational_assistance_id)
                     $("#date_of_update").val(data.data.updated_at)
                     $("#quantity").val(data.data.stok)
                     $("#price").val(data.data.harga)
                     $("#price_per_item").val(data.data.harga_satuan)
-                    // $("#note").html(data.data.note)
                 }
             })
         })
@@ -38,19 +32,19 @@
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
-            if (document.forms["commodity_create"]["name_create"].value == "") {
-        Swal.fire({
-                title: "Gagal",
-                text: "Inputan Harus Di isi.",
-                icon: "warning",
-                timerProgressBar: true,
-                showConfirmButton: true
-            });
-        return false;
-    }
+                if (document.forms["commodity_create"]["name_create"].value == "") {
+                     Swal.fire({
+                        title: "Gagal",
+                        text: "Inputan Harus Di isi.",
+                        icon: "warning",
+                        timerProgressBar: true,
+                        showConfirmButton: true
+                     });
+                return false;
+                }
             $.ajax({
-                type: "POST",
-                url: "BarangMaster/json",
+                method:"POST",
+                url: "BarangMaster/",
                 data: {
                     _token: token,
                     kode_barang: $("#item_code_create").val(),
@@ -98,14 +92,13 @@
             $("#swal-update-button").attr("data-id", id);
 
             $.ajax({
-                url: "BarangMaster/update/" + id + "/edit",
-                type: "GET",
+                url: "BarangMaster/" + id + "/edit",
+                method:"GET",
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    $("#id_barang_edit").val(data.data.id_barang)
                     $("#item_code_edit").val(data.data.kode_barang)
                     $("#name_edit").val(data.data.nama_barang)
                     $("#quantity_edit").val(data.data.stok)
@@ -186,8 +179,8 @@
                     let id = $(this).data("id");
                     let token = $("input[name=_token]").val();
                     $.ajax({
-                        url: "BarangMaster/delete/" + id,
-                        type: "DELETE",
+                        url: "BarangMaster/" + id,
+                        method:"DELETE",
                         data: {
                             id: id,
                             _token: token

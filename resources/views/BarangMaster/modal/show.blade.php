@@ -25,13 +25,6 @@
               <td style="width: 20px;">:</td>
               <td id="name"></td>
             </tr>
-            <!-- <tr>
-              <td>
-                <b>Lokasi</b>
-              </td>
-              <td>:</td>
-              <td id="commodity_location_id"></td>
-            </tr> -->
           </table>
         </div>
         <hr>
@@ -75,7 +68,7 @@
         <hr>
         <div class="row">
           <div class="col-lg-4">
-            <label for="quantity"><b>Banyaknya</b></label>
+            <label for="quantity"><b>Stok</b></label>
             <input type="text" name="" class="form-control" id="quantity" placeholder="" disabled>
           </div>
           <div class="col-lg-4">
