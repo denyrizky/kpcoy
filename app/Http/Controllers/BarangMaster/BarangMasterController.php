@@ -5,6 +5,7 @@ namespace App\Http\Controllers\BarangMaster;
 use App\BarangMaster;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class BarangMasterController extends Controller
 {
@@ -16,7 +17,6 @@ class BarangMasterController extends Controller
     public function index()
     {
         $master = BarangMaster::latest()->get();
-
         return view('BarangMaster.index', compact('master'));
     }
 
@@ -39,8 +39,10 @@ class BarangMasterController extends Controller
 
     public function store(Request $request)
     {
+        $kode_barang = IdGenerator::generate(['table' => 'master_barang','field'=>'kode_barang', 'length' => 8, 'prefix' =>'BRG']);
         $master = new BarangMaster();
-         $master->kode_barang = $request->kode_barang;
+       
+         $master->kode_barang = $kode_barang;
          $master->nama_barang = $request->nama_barang;
          $master->stok = $request->stok;
          $master->harga = $request->harga;
@@ -61,7 +63,6 @@ class BarangMasterController extends Controller
   // return $id;
         // exit;
         $commodity = BarangMaster::findOrFail($id);
-
         // print_r($commodity);
         // exit; 
 
@@ -92,7 +93,6 @@ class BarangMasterController extends Controller
     public function edit($id)
     {
         $data = BarangMaster::findOrFail($id);
-
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);
     }
 

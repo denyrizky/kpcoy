@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-lg-12">
             <label for="item_code"><b>Kode Barang</b></label>
-            <input type="text" name="" class="form-control" id="item_code" placeholder="" disabled>
+            <input type="text" name="item_code" class="form-control" id="item_code" placeholder="" disabled>
           </div>
         </div>
         <hr>

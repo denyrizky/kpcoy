@@ -12,20 +12,20 @@
         <form name="commodity_create">
           @csrf
           <div class="row">
-            <div class="col-lg-6">
-              <div class="form-group">
-                <label for="item_code">Kode Barang</label>
-                <input type="text" name="item_code" class="form-control" id="item_code_create">
-              </div>
-            </div>
-          
-            <div class="col-lg-6">
+          <div class="col-lg-6">
               <div class="form-group">
                 <label for="name">Nama Barang</label>
                 <input type="text" class="form-control" id="name_create">
               </div>
             </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <input type="text" name="item_code" class="form-control" id="item_code_create" hidden>
+              </div>
+            </div>
           </div>
+
 
           <hr>
           <div class="row">
