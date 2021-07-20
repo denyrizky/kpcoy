@@ -56,7 +56,7 @@
               <th scope="col">#</th>
               <th scope="col">Kode Barang</th>
               <th scope="col">Nama Barang</th>
-              <th scope="col">Tahun Pembelian</th>
+              <th scope="col">Stok</th>
               <!-- <th scope="col">Kondisi</th> -->
               <th scope="col">Aksi</th>
             </tr>
@@ -67,7 +67,7 @@
               <th scope="row">{{ $loop->iteration }}</th>
               <td>{{ $commodity->kode_barang }}</td>
               <td>{{ Str::limit($commodity->nama_barang, 55, '...') }}</td>
-              <td>{{ $commodity->created_at }}</td>
+              <td>{{ $commodity->stok }}</td>
               <!-- @if($commodity->condition === 1)
               <td>
                 <span class="badge badge-pill badge-success" data-toggle="tooltip" data-placement="top" title="Baik">Baik</span>

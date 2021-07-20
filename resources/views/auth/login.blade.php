@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-    <title>Login &mdash; SD Muhammadiyah Brosot</title>
+    <title>Login &mdash; CV Restu Ibu</title>
 
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ url('assets/bootstrap/css/bootstrap.min.css') }}">

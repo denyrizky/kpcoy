@@ -3,25 +3,22 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Modal Update Barang</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form name="commodity_edit">
-                    @csrf
+                @csrf
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="item_code_edit">Kode Barang</label>
-                                <input type="text" name="item_code_edit" class="form-control" id="item_code_edit">
+                                <input type="text" name="item_code_edit" class="form-control" id="item_code_edit"disabled>
                             </div>
                         </div>
-
-                     
-
-                    
+      
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="name_edit">Nama Barang</label>
@@ -30,22 +27,6 @@
                         </div>
                     </div>
 
-                        <!-- <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="brand_edit">Merek</label>
-                                <input type="text" class="form-control" id="brand_edit">
-                            </div>
-                        </div> -->
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label for="date_of_purchase_edit">Tahun Pembelian</label>
-                                <input type="date" class="form-control" id="date_of_purchase_edit">
-                            </div>
-                        </div>
-                    </div>
-
-                  
                     <hr>
                     <div class="row">
                         <div class="col-lg-4">
@@ -70,14 +51,6 @@
                         </div>
                     </div>
 
-                    <!-- <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label for="note_edit">Keterangan</label>
-                                <textarea class="form-control" id="note_edit" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div> -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                         <button data-id="" type="submit" class="btn btn-primary" id="swal-update-button">Ubah Data</button>

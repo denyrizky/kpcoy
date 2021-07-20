@@ -12,6 +12,12 @@
                 <form name="commodity_edit">
                 @csrf
                     <div class="row">
+                    <div class="col-lg-6">
+                            <div class="form-group">
+                                <label for="item_code_edit">ID Barang</label>
+                                <input type="text" name="ID_brg" class="form-control" id="ID_brg"disabled>
+                            </div>
+                        </div>
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="item_code_edit">Kode Barang</label>

@@ -1,4 +1,4 @@
-@extends('layouts.stisla.index', ['title' => 'Admin Dashboard', 'page_heading' => 'Dashboard'])
+@extends('layouts.stisla.index', ['title' => 'Admin Dashboard', 'page_heading' => 'Halaman Utama'])
 
 @section('content')
 <div class="row">

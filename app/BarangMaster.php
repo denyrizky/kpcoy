@@ -17,4 +17,7 @@ class BarangMaster extends Model
         'harga',
         'harga_satuan'
     ];
+    public function det_barang(){
+        return $this->beloongsTo(det_barang::class,'id_barang','id_barang');
+    }
 }

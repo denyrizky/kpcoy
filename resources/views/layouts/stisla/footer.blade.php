@@ -22,6 +22,8 @@
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <!-- Template JS File -->
 <script src="{{ url('assets/js/scripts.js') }}"></script>
 <script src="{{ url('assets/js/custom.js') }}"></script>

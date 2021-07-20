@@ -1,4 +1,5 @@
 <script>
+    
     $(document).ready(function() {
         $(".show_modal").click(function() {
             let id = $(this).data("id")
@@ -7,8 +8,8 @@
             // alert(id);
 
             $.ajax({
-                type: "GET",
-                url: "barangKeluar/show/" + id,
+                method:"GET",
+                url: "BarangMaster/" + id,
                 // data: {
                
                 //     id: id,
@@ -16,18 +17,14 @@
                 // },
                 success: function(data) {
                     console.log(data);
-                    $("#modalLabel").html(data.data.Kode_Barang)
-                    $("#item_code").val(data.data.Kode_Barang)
-                   // $("#commodity_location_id").html(data.data.commodity_location_id)
-                    $("#name").html(data.data.Nama_Barang)
-                    // $("#brand").val(data.data.brand)
-                    // $("#material").val(data.data.material)
-                    $("#date_of_purchase").val(data.data.date_of_purchase)
-                    // $("#school_operational_assistance_id").html(data.data.school_operational_assistance_id)
-                    $("#quantity").val(data.data.Qty)
-                    $("#price").val(data.data.Harga)
-                    $("#price_per_item").val(data.data.Harga_Satuan)
-                    $("#note").html(data.data.note)
+                    $("#modalLabel").html(data.data.kode_barang)
+                    $("#item_code").val(data.data.kode_barang)
+                    $("#name").html(data.data.nama_barang)
+                    $("#date_of_purchase").val(data.data.created_at)
+                    $("#date_of_update").val(data.data.updated_at)
+                    $("#quantity").val(data.data.stok)
+                    $("#price").val(data.data.harga)
+                    $("#price_per_item").val(data.data.harga_satuan)
                 }
             })
         })
@@ -35,25 +32,26 @@
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
-
+                if (document.forms["commodity_create"]["name_create"].value == "") {
+                     Swal.fire({
+                        title: "Gagal",
+                        text: "Inputan Harus Di isi.",
+                        icon: "warning",
+                        timerProgressBar: true,
+                        showConfirmButton: true
+                     });
+                return false;
+                }
             $.ajax({
-                type: "POST",
-                url: "barangKeluar",
+                method:"POST",
+                url: "BarangMaster/",
                 data: {
                     _token: token,
-                    // school_operational_assistance_id: 0,
-                    //school_operational_assistance_id: $("#school_operational_assistance_id_create").val(),
-                    // commodity_location_id: $("#commodity_location_id_create").val(),
-                    item_code: $("#item_code_create").val(),
-                    name: $("#name_create").val(),
-                    // brand: $("#brand_create").val(),
-                    // material: $("#material_create").val(),
-                    date_of_purchase: $("#date_of_purchase_create").val(),
-                    // condition: $("#condition_create").val(),
-                    quantity: $("#quantity_create").val(),
-                    price: $("#price_create").val(),
-                    price_per_item: $("#price_per_item_create").val(),
-                    // note: $("#note_create").val(),
+                    kode_barang: $("#item_code_create").val(),
+                    nama_barang: $("#name_create").val(),
+                    stok: $("#quantity_create").val(),
+                    harga: $("#price_create").val(),
+                    harga_satuan: $("#price_per_item_create").val(),
                 },
                 success: function(data) {
                     Swal.fire({
@@ -94,25 +92,19 @@
             $("#swal-update-button").attr("data-id", id);
 
             $.ajax({
-                url: "barangKeluar" + id + "/edit",
-                type: "GET",
+                url: "BarangMaster/" + id + "/edit",
+                method:"GET",
                 data: {
                     id: id,
                     _token: token
                 },
                 success: function(data) {
-                    //$("#school_operational_assistance_id_edit").val(data.data.school_operational_assistance_id)
-                    //$("#commodity_location_id_edit").val(data.data.commodity_location_id)
-                    $("#item_code_edit").val(data.data.Kode_Barang)
-                    $("#name_edit").val(data.data.Nama_Barang)
-                    //$("#brand_edit").val(data.data.brand)
-                    //$("#material_edit").val(data.data.material)
-                    $("#date_of_purchase_edit").val(data.data.created_at)
-                    //$("#condition_edit").val(data.data.condition)
-                    $("#quantity_edit").val(data.data.Qty)
-                    $("#price_edit").val(data.data.Harga)
-                    $("#price_per_item_edit").val(data.data.Harga_Satuan)
-                    // $("#note_edit").val(data.data.note)
+                    $("#item_code_edit").val(data.data.kode_barang)
+                    $("#name_edit").val(data.data.nama_barang)
+                    $("#quantity_edit").val(data.data.stok)
+                    $("#price_edit").val(data.data.harga)
+                    $("#price_per_item_edit").val(data.data.harga_satuan)
+
                 },
                 error: function(data) {
                     Swal.fire("Gagal!", "Tidak dapat melihat info kategori.", "warning");
@@ -125,29 +117,24 @@
             // Get id injected by .swal-edit-button
             let id = $("#swal-update-button").attr("data-id");
             let token = $("input[name=_token]").val();
-
+            
             let name = $("#name_edit").val();
             let description = $("#description_edit").val();
 
             $.ajax({
-                url: "barangKeluar" + id,
-                type: "PUT",
+                url: "BarangMaster/" + id,
+                method:"PUT",
                 data: {
                     _token: token,
-                    // school_operational_assistance_id: $("#school_operational_assistance_id_edit").val(),
-                    // commodity_location_id: $("#commodity_location_id_edit").val(),
-                    item_code: $("#item_code_edit").val(),
-                    name: $("#name_edit").val(),
-                    brand: $("#brand_edit").val(),
-                   // material: $("#material_edit").val(),
-                    date_of_purchase: $("#date_of_purchase_edit").val(),
-                   // condition: $("#condition_edit").val(),
-                    quantity: $("#quantity_edit").val(),
-                    price: $("#price_edit").val(),
-                    price_per_item: $("#price_per_item_edit").val(),
-                    //note: $("#note_edit").val(),
+
+                    kode_barang: $("#item_code_edit").val(),
+                    nama_barang: $("#name_edit").val(),
+                    stok: $("#quantity_edit").val(),
+                    harga: $("#price_edit").val(),
+                    harga_satuan: $("#price_per_item_edit").val(),
                 },
                 success: function(data) {
+                    console.log(data);
                     Swal.fire({
                         title: "Berhasil",
                         text: "Data berhasil diubah.",
@@ -192,8 +179,8 @@
                     let id = $(this).data("id");
                     let token = $("input[name=_token]").val();
                     $.ajax({
-                        url: "barangKeluar" + id,
-                        type: "DELETE",
+                        url: "BarangMaster/" + id,
+                        method:"DELETE",
                         data: {
                             id: id,
                             _token: token
@@ -232,4 +219,5 @@
         });
 
     })
+ 
 </script>

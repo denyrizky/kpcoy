@@ -31,7 +31,7 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="form-group">
-                <label for="quantity">Kuantitas</label>
+                <label for="quantity">Stok</label>
                 <input type="number" class="form-control" id="quantity_create">
               </div>
             </div>

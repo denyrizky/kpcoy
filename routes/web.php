@@ -42,16 +42,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/barang', 'Commodities\CommodityController');
     Route::resource('/bantuan-dana-operasional', 'SchoolOperationalAssistances\SchoolOperationalAssistance');
     Route::resource('/ruang', 'CommodityLocations\CommodityLocationController');
-    Route::resource('/barangKeluar', 'BarangKeluar\BKeluarController');
-    Route::get('barangKeluar/show/{id}', 'BarangKeluar\BKeluarController@show');
 
     // Route::get('/barangKeluar', [BarangKeluarController::class, 'index']);
     Route::resource('/commodities/json', 'Commodities\Ajax\CommodityAjaxController');
     Route::resource('/school-operational/json', 'SchoolOperationalAssistances\Ajax\SchoolOperationalAssistanceAjaxController');
     Route::resource('/commodity-locations/json', 'CommodityLocations\Ajax\CommodityLocationAjaxController');
 
-
+    Route::resource('/trx_barang', 'Transaksi\TrxController');
     Route::resource('/BarangMaster', 'BarangMaster\BarangMasterController');
+    Route::resource('/det_trx_barang', 'kelola\trx_kelola_barangController');
+    Route::post('KelolaBarang/simpan', 'kelola\trx_kelola_barangController@store');
+    Route::get('KelolaBarang/getDetail/{id}', 'Kelola\trx_kelola_barangController@getDetail');
     //Route::post('/BarangMaster/json','BarangMaster\BarangMasterController@store')->name('product.store');  
 
     

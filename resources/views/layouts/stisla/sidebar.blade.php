@@ -7,9 +7,9 @@
             <a href="index.html">SDMB</a>
         </div>
         <ul class="sidebar-menu">
-            <li class="menu-header">Dashboard</li>
+            <li class="menu-header">Halaman Utama</li>
             <li class="nav-item dropdown {{ Request::segment(2) === 'dashboard' ? 'active' : '' }}">
-                <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a href="{{ route('home') }}" class="nav-link"><i class="fas fa-fire"></i><span>Halaman Utama</span></a>
             </li>
             <!-- <li class="menu-header">Manajemen</li>
             <li class="nav-item dropdown {{ Request::segment(2) === 'barang' ? 'active' : '' }}">
@@ -18,13 +18,13 @@
             <!-- <li class="nav-item dropdown {{ Request::segment(2) === 'bantuan-dana-operasional' ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('bantuan-dana-operasional.index') }}"><i class="far fa-square"></i> <span>Data BOS</span></a>
             </li> -->
-            <!-- <li class="nav-item dropdown {{ Request::segment(2) === 'ruang' ? 'active' : '' }}">
-                <a href="{{ route('ruang.index') }}" class="nav-link"><i class="fas fa-th"></i> <span>Data Ruangan</span></a>
-            </li> -->
-              <li class="nav-item dropdown {{ Request::segment(2) === 'keluar' ? 'active' : '' }}">
-                <a href="{{ route('barangKeluar.index') }}" class="nav-link"><i class="fas fa-columns"></i> <span>Inventory</span></a>
+            <li class="nav-item dropdown active' : '' }}">
+                <a href="{{ route('det_trx_barang.index') }}" class="nav-link"><i class="fas fa-th"></i> <span>Kelola Barang</span></a>
             </li>
-            <li class="nav-item dropdown {{ Request::segment(2) === 'keluar' ? 'active' : '' }}">
+              <li class="nav-item dropdown 'active' : '' }}">
+                <a href="{{ route('trx_barang.index') }}" class="nav-link"><i class="far fa-square"></i> <span>Status Barang</span></a>
+            </li>
+            <li class="nav-item dropdown 'active' : '' }}">
                 <a href="{{ route('BarangMaster.index') }}" class="nav-link"><i class="fas fa-columns"></i> <span>Master Barang</span></a>
             </li>
         </ul>

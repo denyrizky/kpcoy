@@ -12,7 +12,7 @@
         <div class="row">
           <div class="col-lg-12">
             <label for="item_code"><b>Kode Barang</b></label>
-            <input type="text" name="" class="form-control" id="item_code" placeholder="" disabled>
+            <input type="text" name="item_code" class="form-control" id="item_code" placeholder="" disabled>
           </div>
         </div>
         <hr>
@@ -25,13 +25,6 @@
               <td style="width: 20px;">:</td>
               <td id="name"></td>
             </tr>
-            <!-- <tr>
-              <td>
-                <b>Lokasi</b>
-              </td>
-              <td>:</td>
-              <td id="commodity_location_id"></td>
-            </tr> -->
           </table>
         </div>
         <hr>
@@ -47,6 +40,10 @@
           <div class="col-lg-4">
             <label for="date_of_purchase"><b>Tahun Pembelian</b></label>
             <input type="text" name="" class="form-control" id="date_of_purchase" placeholder="" disabled>
+          </div>
+          <div class="col-lg-4">
+            <label for="date_of_purchase"><b>Tahun Pembelian Perbarui</b></label>
+            <input type="text" name="" class="form-control" id="date_of_update" placeholder="" disabled>
           </div>
         </div>
         <!-- <hr> -->
@@ -71,7 +68,7 @@
         <hr>
         <div class="row">
           <div class="col-lg-4">
-            <label for="quantity"><b>Banyaknya</b></label>
+            <label for="quantity"><b>Stok</b></label>
             <input type="text" name="" class="form-control" id="quantity" placeholder="" disabled>
           </div>
           <div class="col-lg-4">

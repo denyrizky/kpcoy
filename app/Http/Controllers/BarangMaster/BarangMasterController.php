@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\BarangMaster;
 
+use App\det_barang;
 use App\BarangMaster;
+use App\Transaksi;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
@@ -41,15 +43,16 @@ class BarangMasterController extends Controller
     {
         $kode_barang = IdGenerator::generate(['table' => 'master_barang','field'=>'kode_barang', 'length' => 8, 'prefix' =>'BRG']);
         $master = new BarangMaster();
-       
+
          $master->kode_barang = $kode_barang;
          $master->nama_barang = $request->nama_barang;
          $master->stok = $request->stok;
          $master->harga = $request->harga;
          $master->harga_satuan = $request->harga_satuan;
          $master->save();
- 
+
          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $master], 200);
+
     }
 
     /**

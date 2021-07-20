@@ -1,4 +1,4 @@
-@extends('layouts.stisla.index', ['title' => 'Halaman Data Barang Keluar', 'page_heading' => 'Data Barang Keluar'])
+@extends('layouts.stisla.index', ['title' => 'Halaman Data Barang', 'page_heading' => 'Transaksi Barang'])
 
 @section('content')
 <div class="card">
@@ -36,6 +36,15 @@
         Tambah Data
       </button>
 
+      <!-- Button trigger modal -->
+      <!-- <button type="button" class="btn btn-primary float-right mt-3 mx-3" data-toggle="modal" data-target="#excel_menu">
+        Import
+      </button> -->
+
+      <!-- <a href="{{ route('excel.barang.export') }}" class="btn btn-success float-right mt-3 mx-3" data-toggle="tooltip" title="Export Excel">
+        <i class="fas fa-fw fa-file-excel"></i>
+      </a> -->
+
     </div>
   </div>
   <div class="row px-3 py-3">
@@ -47,28 +56,26 @@
               <th scope="col">#</th>
               <th scope="col">Kode Barang</th>
               <th scope="col">Nama Barang</th>
-              <th scope="col">Kuantitas</th>
+              <th scope="col">Status</th>
               <!-- <th scope="col">Kondisi</th> -->
               <th scope="col">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($commodities as $commodity)
+            @foreach($data as $commodity)
             <tr>
               <th scope="row">{{ $loop->iteration }}</th>
-              <td>{{ $commodity->Kode_Barang }}</td>
-              <td>{{ Str::limit($commodity->Nama_Barang	, 55, '...') }}</td>
-              <td>{{ $commodity->Qty }}</td>
-            
+              <td>{{ $commodity->kode_barang }}</td>
+              <td>{{ Str::limit($commodity->nama_barang, 55, '...') }}</td>
+              <td>{{ $commodity->status }}</td>
               <td class="text-center">
-                <a data-id="{{ $commodity->ID }}" class="btn btn-sm btn-info text-white show_modal" data-toggle="modal" data-target="#show_commodity" title="Lihat Detail">
+                <a data-id="{{ $commodity->id_barang }}" class="btn btn-sm btn-info text-white show_modal" data-toggle="modal" data-target="#show_commodity" title="Lihat Detail">
                   <i class="fas fa-fw fa-info"></i>
                 </a>
-                <a data-id="{{ $commodity->ID }}" class="btn btn-sm btn-success text-white swal-edit-button" data-toggle="modal" data-target="#edit_commodity" data-placement="top" title="Ubah data">
+                <a data-id="{{ $commodity->id_barang }}" class="btn btn-sm btn-success text-white swal-edit-button" data-toggle="modal" data-target="#edit_commodity" data-placement="top" title="Ubah data">
                   <i class="fas fa-fw fa-edit"></i>
                 </a>
-                </a>
-                <a data-id="{{ $commodity->ID }}" class="btn btn-sm btn-danger text-white swal-delete-button" data-toggle="tooltip" data-placement="top" title="Hapus data">
+                <a data-id="{{ $commodity->id_barang }}" class="btn btn-sm btn-danger text-white swal-delete-button" data-toggle="tooltip" data-placement="top" title="Hapus data">
                   <i class="fas fa-fw fa-trash-alt"></i>
                 </a>
               </td>
@@ -83,12 +90,12 @@
 @endsection
 
 @push('modal')
-@include('barangkeluar.modal.show')
-@include('barangkeluar.modal.create')
-@include('barangkeluar.modal.edit')
-@include('barangkeluar.modal.import')
+@include('BarangMaster.modal.show')
+@include('BarangMaster.modal.create')
+@include('BarangMaster.modal.edit')
+@include('BarangMaster.modal.import')
 @endpush
 
 @push('js')
-@include('barangkeluar._script')
+@include('BarangMaster._script')
 @endpush
