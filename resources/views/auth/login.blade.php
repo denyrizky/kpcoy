@@ -60,6 +60,7 @@
                                     Login
                                 </button>
                             </div>
+                            <a href="{{route('register')}}">register</a>
                         </form>
 
                         <div class="text-center mt-5 text-small">

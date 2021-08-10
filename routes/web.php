@@ -53,6 +53,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('/det_trx_barang', 'kelola\trx_kelola_barangController');
     Route::post('KelolaBarang/simpan', 'kelola\trx_kelola_barangController@store');
     Route::get('KelolaBarang/getDetail/{id}', 'Kelola\trx_kelola_barangController@getDetail');
+    Route::resource('laporan', 'laporanController');
+
     //Route::post('/BarangMaster/json','BarangMaster\BarangMasterController@store')->name('product.store');  
 
     

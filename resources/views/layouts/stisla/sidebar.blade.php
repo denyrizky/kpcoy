@@ -21,11 +21,14 @@
             <li class="nav-item dropdown active' : '' }}">
                 <a href="{{ route('det_trx_barang.index') }}" class="nav-link"><i class="fas fa-th"></i> <span>Kelola Barang</span></a>
             </li>
-              <li class="nav-item dropdown 'active' : '' }}">
+              <!-- <li class="nav-item dropdown 'active' : '' }}">
                 <a href="{{ route('trx_barang.index') }}" class="nav-link"><i class="far fa-square"></i> <span>Status Barang</span></a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown 'active' : '' }}">
                 <a href="{{ route('BarangMaster.index') }}" class="nav-link"><i class="fas fa-columns"></i> <span>Master Barang</span></a>
+            </li>
+            <li class="nav-item dropdown 'active' : '' }}">
+                <a href="{{ route('laporan.index') }}" class="nav-link"><i class="far fa-square"></i> <span>Laporan</span></a>
             </li>
         </ul>
 
