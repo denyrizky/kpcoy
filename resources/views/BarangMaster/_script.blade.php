@@ -32,7 +32,10 @@
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
-                if (document.forms["commodity_create"]["name_create"].value == "") {
+            let nameCreate = document.forms["commodity_create"]["name_create"].value;
+            let itemCreate = document.forms["commodity_create"]["price_per_item_create"].value;
+
+                if (nameCreate == '' || itemCreate == '') {
                      Swal.fire({
                         title: "Gagal",
                         text: "Inputan Harus Di isi.",
@@ -87,7 +90,7 @@
         $(".swal-edit-button").click(function() {
             let id = $(this).data("id");
             let token = $("input[name=_token]").val();
-
+            let name = $("#name_edit").val();
             // Injecting an id with relevant data on click for updating on #swal-update-button
             $("#swal-update-button").attr("data-id", id);
 
@@ -121,7 +124,9 @@
             let name = $("#name_edit").val();
             let description = $("#description_edit").val();
 
+            
             $.ajax({
+
                 url: "BarangMaster/" + id,
                 method:"PUT",
                 data: {

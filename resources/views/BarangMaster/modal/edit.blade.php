@@ -29,19 +29,6 @@
 
                     <hr>
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="quantity_edit">Stok</label>
-                                <input type="number" class="form-control" id="quantity_edit">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4">
-                            <div class="form-group">
-                                <label for="price_edit">Harga</label>
-                                <input type="number" class="form-control" id="price_edit">
-                            </div>
-                        </div>
 
                         <div class="col-lg-4">
                             <div class="form-group">

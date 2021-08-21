@@ -61,6 +61,24 @@
         $("form[name='commodity_create']").submit(function(e) {
             e.preventDefault();
             let token = $("input[name=_token]").val();
+            let itemCreate = $(this).data('qty');
+
+            let value = $(this).val();
+
+                let ledakan = value.split('~');
+                // alert(ledakan);
+                let stpk = value[4];
+                if (itemCreate < stpk ) {
+                     Swal.fire({
+                        title: "Gagal",
+                        text: "Inputan Harus Di isi.",
+                        icon: "warning",
+                        timerProgressBar: true,
+                        showConfirmButton: true
+                     });
+                return false;
+                }
+
             $.ajax({
                 method:"POST",
                 url: "KelolaBarang/simpan",
@@ -118,12 +136,16 @@
                 let nama = ledakan[2];
                 let harga = ledakan[3];
 
-                alert(ledakan);
+                // alert(ledakan);
 
                 $('#harga').val(harga);
 
             }
 
+        });
+
+        $('#stat_trx').on('change',function(){
+            $('#badan_table>tbody').html('');
         });
 
         $('#tambah_tombol').click(function(e){
@@ -138,7 +160,6 @@
             if(parseFloat(qty) < 0 || parseFloat(qty) == 0){
                 return false;
             }
-
             // alert(pilih_barang);
 
             if(pilih_barang == ''){
@@ -151,8 +172,27 @@
                 let kode = ledakan[1];
                 let nama = ledakan[2];
                 let harga = ledakan[3];
+                let stok = ledakan[4];
 
                 let table = $('#badan_table>tbody');
+
+                if($('#stat_trx').val() == '2'){
+                    if(stok <= 0){
+                        Swal.fire({
+                        title: "Gagal",
+                        text: "Stok Sudah Habis.",
+                        icon: "warning",
+                        timerProgressBar: true,
+                        showConfirmButton: true
+                     });
+                        return false;
+                    }
+                    if(parseFloat(stok) < parseFloat(qty)){
+                        
+                        return false;
+                    }
+                }
+                
 
                 if($('.barang'+id).length > 0){}else{
 

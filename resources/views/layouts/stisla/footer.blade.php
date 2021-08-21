@@ -16,6 +16,8 @@
 <script src="{{ url('assets/js/jquery.nicescroll.min.js') }}"></script>
 <script src="{{ url('assets/js/moment.min.js') }}"></script>
 <script src="{{ url('assets/js/stisla.js') }}"></script>
+<script src="{{ url('assets/js/canvasjs.min.js') }}"></script>
+<script src="{{ url('assets/js/jquery.canvasjs.min.js') }}"></script>
 
 <!-- JS Libraies -->
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
@@ -38,6 +40,17 @@
     $(document).ready(function() {
         $("#datatable").DataTable({
             "lengthMenu": [5, 10, 15],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Indonesian.json"
+            }
+        });
+    })
+    $(document).ready(function() {
+        $("#datatable2").DataTable({
+            searching: false,
+            info: false,
+            "bLengthChange" : false,
+            "lengthMenu": [5],
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Indonesian.json"
             }

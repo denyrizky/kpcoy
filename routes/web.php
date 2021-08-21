@@ -33,6 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/settings', "SettingController@index")->name('settings');
     Route::post('/settings', "SettingController@simpan")->name('settings.simpan');
 
+    Route::get('getDataChart', "HomeController@getChart")->name('getChart');
+
     Route::group(['prefix' => 'barang', 'as' => 'barang.'], function () {
         Route::get('/print', 'Commodities\PdfController@generatePdf')->name('print');
         Route::get('/print/{id}', "Commodities\PdfController@generatePdfOne")->name('print.one');
@@ -54,7 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('KelolaBarang/simpan', 'kelola\trx_kelola_barangController@store');
     Route::get('KelolaBarang/getDetail/{id}', 'Kelola\trx_kelola_barangController@getDetail');
     Route::resource('laporan', 'laporanController');
-
+    Route::get('cetak/pertanggal/{tglawal}/{tglakhir}/{status}','laporanController@cetak');
     //Route::post('/BarangMaster/json','BarangMaster\BarangMasterController@store')->name('product.store');  
 
     

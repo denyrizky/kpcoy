@@ -6,7 +6,7 @@
         <div class="dropdown-menu dropdown-menu-right">
             <div class="dropdown-title">Akun sejak: {{ auth()->user()->diffForHumanDate(auth()->user()->created_at) }}</div>
             <a href="{{ route('settings')}}" class="dropdown-item has-icon {{ Request::segment(2) === 'settings' ? 'active' : '' }}">
-                <i class="fas fa-cog"></i> Settings
+                <i class="fas fa-cog"></i> Pengaturan
             </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item has-icon text-danger" href="{{ route('logout') }}" 

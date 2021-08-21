@@ -1,4 +1,83 @@
 <script>
+window.onload = function () {
+
+function getData(){
+    $.get('{{ route("getChart") }}', function(res){
+        // console.log(res);
+
+        var decode = JSON.parse(res);
+
+        console.log(decode.dataIn);
+
+        var dataIn = [];
+        var dataOut = [];
+
+        $.each(decode.dataIn, function(id, val){
+            dataIn.push({
+                x : new Date(val.week),
+                y : val.value
+            });
+        });
+
+        $.each(decode.dataOut, function(id, val){
+            dataOut.push({
+                x : new Date(val.week),
+                y : val.value
+            });
+        });
+
+
+        var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title: {
+            text: "Daily Kelola Barang Masuk/Keluar"
+        },
+        axisX: {
+            valueFormatString: "DDD",
+            // minimum: new Date(decode.first),
+            // maximum: new Date(decode.end)
+        },
+        axisY: {
+            title: "Harga"
+        },
+        legend: {
+            verticalAlign: "top",
+            horizontalAlign: "right",
+            dockInsidePlotArea: true
+        },
+        toolTip: {
+            shared: true
+        },
+        data: [{
+            name: "Transaksi Masuk",
+            showInLegend: true,
+            legendMarkerType: "square",
+            type: "line",
+            color: "rgba(40,175,101,0.6)",
+            markerSize: 0,
+            dataPoints: dataIn
+        },
+        {
+            name: "Transaksi Keluar",
+            showInLegend: true,
+            legendMarkerType: "square",
+            type: "line",
+            color: "rgba(0,75,141,0.7)",
+            markerSize: 0,
+            dataPoints: dataOut
+        }]
+    });
+    chart.render();
+        
+    });
+}
+
+getData();
+ 
+ 
+  
+ }
+
     $(document).ready(function() {
         $(".show_modal").click(function() {
             let id = $(this).data("id")

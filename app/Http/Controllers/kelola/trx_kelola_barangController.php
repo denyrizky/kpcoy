@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\BarangMaster;
 use App\Transaksi;
 use DB;
+use Haruncpi\LaravelIdGenerator\IdGenerator;
 
 class trx_kelola_barangController extends Controller
 {
@@ -43,10 +44,10 @@ class trx_kelola_barangController extends Controller
     {
 
         // print_r($request->all());
-
+       
         $input = $request->all();
 
-        $kodeTrx = $input['kode_trx'];
+
         $statTrx = $input['stat_trx'];
 
         $idBarang = $input['idbarang'];
@@ -62,8 +63,9 @@ class trx_kelola_barangController extends Controller
         
 
         // QUERY
+        $kodeTrx = IdGenerator::generate(['table' => 'trx_barang_fix','field'=>'kode_trx', 'length' => 8, 'prefix' =>'TRX']);
         $trx = new Transaksi();
-
+     
          $trx->kode_trx = $kodeTrx;
          $trx->status = $statTrx;
          $trx->harga_total = $hargaTotal;

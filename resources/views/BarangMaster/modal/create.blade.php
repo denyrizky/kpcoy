@@ -15,7 +15,7 @@
           <div class="col-lg-6">
               <div class="form-group">
                 <label for="name">Nama Barang</label>
-                <input type="text" class="form-control" id="name_create">
+                <input type="text" class="form-control" id="name_create" autocomplete="off">
               </div>
             </div>
 
@@ -29,19 +29,6 @@
 
           <hr>
           <div class="row">
-            <div class="col-lg-4">
-              <div class="form-group">
-                <label for="quantity">Stok</label>
-                <input type="number" class="form-control" id="quantity_create">
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="form-group">
-                <label for="price">Harga</label>
-                <input type="number" class="form-control" id="price_create">
-              </div>
-            </div>
 
             <div class="col-lg-4">
               <div class="form-group">

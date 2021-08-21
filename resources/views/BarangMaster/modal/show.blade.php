@@ -66,20 +66,6 @@
           </table>
         </div> -->
         <hr>
-        <div class="row">
-          <div class="col-lg-4">
-            <label for="quantity"><b>Stok</b></label>
-            <input type="text" name="" class="form-control" id="quantity" placeholder="" disabled>
-          </div>
-          <div class="col-lg-4">
-            <label for="price"><b>Harga</b></label>
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Rp.</span>
-              </div>
-              <input type="text" id="price" class="form-control" placeholder="" disabled>
-            </div>
-          </div>
           <div class="col-lg-4">
             <label for="price_per_item"><b>Harga Satuan</b></label>
             <div class="input-group mb-3">
@@ -91,7 +77,7 @@
           </div>
         </div>
 
-      </div>
+   
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
       </div>

@@ -17,6 +17,7 @@ class TrxController extends Controller
     {
         // $data = DB::table('master_barang')->join('trx_barang','master_barang.id_barang','=','trx_barang.id_barang')->get();
         $data = Transaksi::latest()->get();
+        
         return view('trx_barang.index',compact('data'));
     }
 

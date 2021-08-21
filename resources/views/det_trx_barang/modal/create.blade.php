@@ -12,18 +12,12 @@
         <form name="commodity_create">
           @csrf
           <div class="row">
-          <div class="col-lg-3">
-              <div class="form-group">
-                <label for="name">Kode TRX</label>
-                <input type="text" class="form-control" name="kode_trx" id="kode_trx">
-              </div>
-            </div>
 
             <div class="col-lg-9">
               <div class="form-group">
                 <!-- <input type="text" name="item_code" class="form-control" id="item_code_create" hidden> -->
                 <label for="name">Status TRX</label>
-                <select name="stat_trx" name="stat_trx" id="" class="form-control">
+                <select name="stat_trx" name="stat_trx" id="stat_trx" class="form-control">
                   <option value="1">Barang Masuk</option>
                   <option value="2">Barang Keluar</option>
                 </select>
@@ -40,7 +34,9 @@
                 <select name="" class="form-control" id="pilih_barang">
                   <option value="">[ Silahkan Pilih Barang ]</option>
                   @foreach($show as $barang)
-                  <option value="{{ $barang->id_barang }}~{{ $barang->kode_barang }}~{{ $barang->nama_barang }}~{{ $barang->harga_satuan }}">[{{ $barang->kode_barang }}] {{ $barang->nama_barang }} [Stock: {{ $barang->stok }}] [Harga: {{ $barang->harga_satuan }}]</option>
+                
+                  <option value="{{ $barang->id_barang }}~{{ $barang->kode_barang }}~{{ $barang->nama_barang }}~{{ $barang->harga_satuan }}~{{ $barang->stok }}">{{ $barang->nama_barang }} [Stock: {{ $barang->stok }}] </option>
+                  
                   @endforeach
                 </select>
               </div>
@@ -49,7 +45,7 @@
             <div class="col-lg-3">
               <div class="form-group">
                 <label for="price">Harga Satuan</label>
-                <input type="number" class="form-control" id="harga">
+                <input type="number" class="form-control" id="harga" Readonly>
               </div>
             </div>
 

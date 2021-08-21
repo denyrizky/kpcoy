@@ -29,14 +29,11 @@
                             @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1" required autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" tabindex="1" autofocus required>
 
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-
+                                <div class="invalid-feedback">
+                                    Email Atau Password Salah!
+                                </div>
                             </div>
 
                             <div class="form-group">
@@ -48,11 +45,11 @@
                                     Mohon masukkan password!
                                 </div>
 
-                                @error('email')
+                                <!-- @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                                @enderror
+                                @enderror -->
                             </div>
 
                             <div class="form-group text-right">

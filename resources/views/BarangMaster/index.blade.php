@@ -27,24 +27,10 @@
 
   <div class="row">
     <div class="col-lg-12">
-      <a href="{{ route('barang.print') }}" class="btn btn-success float-right mt-3 mx-3" data-toggle="tooltip" title="Print">
-        <i class="fas fa-fw fa-print"></i>
-      </a>
-
       <button type="button" class="btn btn-primary float-right mt-3 mx-3" data-toggle="modal" data-target="#commodity_create_modal">
         <i class="fas fa-fw fa-plus"></i>
         Tambah Data
       </button>
-
-      <!-- Button trigger modal -->
-      <!-- <button type="button" class="btn btn-primary float-right mt-3 mx-3" data-toggle="modal" data-target="#excel_menu">
-        Import
-      </button> -->
-
-      <!-- <a href="{{ route('excel.barang.export') }}" class="btn btn-success float-right mt-3 mx-3" data-toggle="tooltip" title="Export Excel">
-        <i class="fas fa-fw fa-file-excel"></i>
-      </a> -->
-
     </div>
   </div>
   <div class="row px-3 py-3">
@@ -57,7 +43,6 @@
               <th scope="col">Kode Barang</th>
               <th scope="col">Nama Barang</th>
               <th scope="col">Stok</th>
-              <!-- <th scope="col">Kondisi</th> -->
               <th scope="col">Aksi</th>
             </tr>
           </thead>
