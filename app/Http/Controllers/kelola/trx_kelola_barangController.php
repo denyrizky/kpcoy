@@ -152,10 +152,10 @@ class trx_kelola_barangController extends Controller
      */
     public function show($id)
     {
-        $data = Transaksi::findOrFail($id);
+        // $data = Transaksi::findOrFail($id);
 
  
-        return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);
+        // return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);
     }
 
     /**
@@ -178,14 +178,14 @@ class trx_kelola_barangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $master = BarangMaster::latest()->get();
-        $data = new det_barang();
+        // $master = BarangMaster::latest()->get();
+        // $data = new det_barang();
 
-         $data->id_trx_barang = $request->id_trx_barang;
-         $data->id_barang = $request->id_barang;
-         $data->qty = $request->qty;
-         $data->harga = $request->harga;
-         $data->save();
+        //  $data->id_trx_barang = $request->id_trx_barang;
+        //  $data->id_barang = $request->id_barang;
+        //  $data->qty = $request->qty;
+        //  $data->harga = $request->harga;
+        //  $data->save();
 
          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);
     }
