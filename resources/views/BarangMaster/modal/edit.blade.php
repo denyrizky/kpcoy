@@ -26,10 +26,13 @@
                             </div>
                         </div>
                     </div>
-
-                    <hr>
                     <div class="row">
-
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="name">Merk</label>
+                            <input type="text"  class="form-control" id="merk_edit">
+                        </div>
+                    </div>
                         <div class="col-lg-4">
                             <div class="form-group">
                                 <label for="price_per_item_edit">Harga Satuan</label>

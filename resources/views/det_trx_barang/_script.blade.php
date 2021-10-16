@@ -37,7 +37,7 @@
                 table.html('');
 
                 $.each(obj, function(i, val){
-                    console.log(val.kode_barang);
+                    console.log(val);
 
                     let jmlh = parseFloat(val.harga) * parseFloat(val.qty);
 
@@ -45,7 +45,8 @@
                     '<td>['+val.kode_barang+'] '+val.nama_barang+'</td>'+
                     '<td>'+val.harga+'</td>'+
                     '<td>'+val.qty+'</td>'+
-                    '<td>'+jmlh+'</td>'
+                    '<td>'+jmlh+'</td>'+
+                    '<td>'+val.merk+'</td>'
                     +'</tr>';
 
                     table.append(str);
@@ -135,7 +136,9 @@
                 let kode = ledakan[1];
                 let nama = ledakan[2];
                 let harga = ledakan[3];
-
+                let stok = ledakan[4];
+                let merk = ledakan[5];
+                
                 // alert(ledakan);
 
                 $('#harga').val(harga);
@@ -173,6 +176,7 @@
                 let nama = ledakan[2];
                 let harga = ledakan[3];
                 let stok = ledakan[4];
+                let merk = ledakan[5];
 
                 let table = $('#badan_table>tbody');
 
@@ -203,8 +207,9 @@
                     '<td>['+kode+'] '+nama+'</td>'+
                     '<td><input type="hidden" name="hargaBarang[]" value="'+harga+'">'+harga+'</td>'+
                     '<td><input type="hidden" name="qtyBarang[]" value="'+qty+'">'+qty+'</td>'+
-                    '<td><input type="hidden" name="jmlhHarga[]" value="'+jmlh+'">'+jmlh+'</td>'
-                    +'</tr>';
+                    '<td><input type="hidden" name="jmlhHarga[]" value="'+jmlh+'">'+jmlh+'</td>'+
+                    '<td>'+merk+'</td>'+
+                    '</tr>';
 
                     table.append(str);
 

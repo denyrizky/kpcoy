@@ -75,7 +75,6 @@
                 <a data-id="{{ $commodity->id_trx_barang }}" class="btn btn-sm btn-danger text-white swal-delete-button" data-toggle="tooltip" data-placement="top" title="Hapus data">
                   <i class="fas fa-fw fa-trash-alt"></i>
                 </a>
-
               </td>
             </tr>
             @endforeach

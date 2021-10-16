@@ -136,7 +136,7 @@ class trx_kelola_barangController extends Controller
         
         $getData = DB::table('det_trx_barang_fix')
         ->join('master_barang', 'det_trx_barang_fix.id_barang', '=', 'master_barang.id_barang')
-        ->select('det_trx_barang_fix.*', 'master_barang.kode_barang', 'master_barang.nama_barang')
+        ->select('det_trx_barang_fix.*', 'master_barang.kode_barang', 'master_barang.nama_barang', 'master_barang.merk')
         ->where('det_trx_barang_fix.id_trx_barang', $id)
         ->get();
 

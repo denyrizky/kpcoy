@@ -35,7 +35,7 @@
                   <option value="">[ Silahkan Pilih Barang ]</option>
                   @foreach($show as $barang)
                 
-                  <option value="{{ $barang->id_barang }}~{{ $barang->kode_barang }}~{{ $barang->nama_barang }}~{{ $barang->harga_satuan }}~{{ $barang->stok }}">{{ $barang->nama_barang }} [Stock: {{ $barang->stok }}] </option>
+                  <option value="{{ $barang->id_barang }}~{{ $barang->kode_barang }}~{{ $barang->nama_barang }}~{{ $barang->harga_satuan }}~{{ $barang->stok }}~{{ $barang->merk}}">{{ $barang->nama_barang }} {{ $barang->merk }} [Stock: {{ $barang->stok }}] </option>
                   
                   @endforeach
                 </select>
@@ -72,6 +72,7 @@
                 <th>Harga</th>
                 <th>Qty</th>
                 <th>Jumlah</th>
+                <th>Merk</th>
               </tr>
             </thead>
             <tbody></tbody>

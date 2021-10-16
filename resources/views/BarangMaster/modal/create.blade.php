@@ -18,7 +18,12 @@
                 <input type="text" class="form-control" id="name_create" autocomplete="off">
               </div>
             </div>
-
+          <div class="col-lg-6">
+              <div class="form-group">
+                <label for="name">Merk</label>
+                <input type="text" name="merk" class="form-control" id="merk_create" autocomplete="off">
+              </div>
+            </div>
             <div class="col-lg-6">
               <div class="form-group">
                 <input type="text" name="item_code" class="form-control" id="item_code_create" hidden>

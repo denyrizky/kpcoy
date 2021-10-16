@@ -49,6 +49,7 @@ class BarangMasterController extends Controller
          $master->stok = $request->stok;
          $master->harga = $request->harga;
          $master->harga_satuan = $request->harga_satuan;
+         $master->merk = $request->merk;
          $master->save();
 
          return response()->json(['status' => 200, 'message' => 'Success', 'data' => $master], 200);
@@ -82,6 +83,7 @@ class BarangMasterController extends Controller
             'stok' => $commodity['stok'],
             'harga' => $commodity['harga'],
             'harga_satuan' => $commodity['harga_satuan'],
+            'merk' => $commodity['merk'],
         ];
 
         return response()->json(['status' => 200, 'message' => 'Success', 'data' => $data], 200);

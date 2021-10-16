@@ -27,6 +27,17 @@
             </tr>
           </table>
         </div>
+        <div class="row">
+          <table class="table">
+            <tr>
+              <td style="width: 145px;">
+                <b>Merk</b>
+              </td>
+              <td style="width: 20px;">:</td>
+              <td id="merk"></td>
+            </tr>
+          </table>
+        </div>
         <hr>
         <div class="row">
           <!-- <div class="col-lg-4">

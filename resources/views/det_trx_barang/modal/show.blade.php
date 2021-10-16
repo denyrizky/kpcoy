@@ -35,6 +35,7 @@
                 <th>Harga</th>
                 <th>Qty</th>
                 <th>Jumlah</th>
+                <th>Merk</th>
               </tr>
             </thead>
             <tbody></tbody>

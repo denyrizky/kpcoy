@@ -19,7 +19,7 @@
                 <a class="nav-link" href="{{ route('bantuan-dana-operasional.index') }}"><i class="far fa-square"></i> <span>Data BOS</span></a>
             </li> -->
             <li class="nav-item dropdown active' : '' }}">
-                <a href="{{ route('det_trx_barang.index') }}" class="nav-link"><i class="fas fa-th"></i> <span>Kelola Barang</span></a>
+                <a href="{{ route('det_trx_barang.index') }}" class="nav-link"><i class="fas fa-th"></i> <span>Transaksi</span></a>
             </li>
               <!-- <li class="nav-item dropdown 'active' : '' }}">
                 <a href="{{ route('trx_barang.index') }}" class="nav-link"><i class="far fa-square"></i> <span>Status Barang</span></a>

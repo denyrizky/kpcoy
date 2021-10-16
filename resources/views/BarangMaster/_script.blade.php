@@ -25,6 +25,7 @@
                     $("#quantity").val(data.data.stok)
                     $("#price").val(data.data.harga)
                     $("#price_per_item").val(data.data.harga_satuan)
+                    $("#merk").html(data.data.merk)
                 }
             })
         })
@@ -34,8 +35,8 @@
             let token = $("input[name=_token]").val();
             let nameCreate = document.forms["commodity_create"]["name_create"].value;
             let itemCreate = document.forms["commodity_create"]["price_per_item_create"].value;
-
-                if (nameCreate == '' || itemCreate == '') {
+            let merk = document.forms["commodity_create"]["merk_create"].value;
+                if (nameCreate == '' || itemCreate == '' || merk=='') {
                      Swal.fire({
                         title: "Gagal",
                         text: "Inputan Harus Di isi.",
@@ -52,9 +53,10 @@
                     _token: token,
                     kode_barang: $("#item_code_create").val(),
                     nama_barang: $("#name_create").val(),
-                    stok: $("#quantity_create").val(),
+                    
                     harga: $("#price_create").val(),
                     harga_satuan: $("#price_per_item_create").val(),
+                    merk: $("#merk_create").val(),
                 },
                 success: function(data) {
                     Swal.fire({
@@ -102,12 +104,13 @@
                     _token: token
                 },
                 success: function(data) {
+                    console.log(data);
                     $("#item_code_edit").val(data.data.kode_barang)
                     $("#name_edit").val(data.data.nama_barang)
                     $("#quantity_edit").val(data.data.stok)
                     $("#price_edit").val(data.data.harga)
                     $("#price_per_item_edit").val(data.data.harga_satuan)
-
+                    $("#merk_edit").val(data.data.merk)
                 },
                 error: function(data) {
                     Swal.fire("Gagal!", "Tidak dapat melihat info kategori.", "warning");
@@ -137,6 +140,7 @@
                     stok: $("#quantity_edit").val(),
                     harga: $("#price_edit").val(),
                     harga_satuan: $("#price_per_item_edit").val(),
+                    merk: $("merk_edit").val(),
                 },
                 success: function(data) {
                     console.log(data);
